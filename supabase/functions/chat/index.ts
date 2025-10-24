@@ -1,5 +1,7 @@
 import 'jsr:@supabase/functions-js/edge-runtime.d.ts'
 import OpenAI from 'https://deno.land/x/openai@v4.24.0/mod.ts'
+import { createOpenAI } from 'npm:@ai-sdk/openai'
+import { convertToModelMessages, streamText } from 'npm:ai'
 
 const systemPrompt = [
   {
@@ -19,25 +21,17 @@ const systemPrompt = [
 
 Deno.serve(async (req) => {
   const { messages } = await req.json()
-  const apiKey = Deno.env.get('PUBLICAI_KEY')
-  const openai = new OpenAI({
-    baseURL: 'https://api.publicai.co/v1',
-    apiKey: apiKey,
-    defaultHeaders: {
-      'User-Agent': 'thechat/1.0'
-    }
+
+  const openai = createOpenAI({
+    baseURL: "https://api.publicai.co/v1",
+    apiKey: Deno.env.get('PUBLICAI_KEY')
   })
 
-  const completion = await openai.chat.completions.create({
-    messages: [ ...systemPrompt, ...messages ],
-    model: 'swiss-ai/apertus-8b-instruct',
-    stream: false,
+  const result = streamText({
+    model: openai.chat('swiss-ai/apertus-8b-instruct'),
+    messages: convertToModelMessages(messages),
+    system: systemPrompt[0].content,
   })
 
-  const response = completion.choices[0].message.content
-  const data = { response }
-  return new Response(
-    JSON.stringify(data), {
-    headers: { 'Content-Type': 'application/json' },
-  })
+  return result.toUIMessageStreamResponse()
 })
