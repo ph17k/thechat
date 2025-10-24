@@ -51,7 +51,7 @@ export default function App() {
           {messages.length === 0 && (
             <div className="welcome-message">
               <div className="welcome-content">
-                <div className="welcome-icon">👋</div>
+                <div className="welcome-icon">🖕</div>
                 <h2>Was wotsch?!</h2>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function App() {
               value={input}
               onChange={e => setInput(e.target.value)}
               disabled={status !== 'ready'}
-              placeholder="Da schriibe..."
+              placeholder="Da chasch öpis schriibe..."
               className="message-input"
               autoComplete="off"
             />
