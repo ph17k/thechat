@@ -37,7 +37,7 @@ export default function App() {
             <div className="bot-icon">🤖</div>
           </div>
           <div className="bot-info">
-            <h1 className="bot-name">Chnurli</h1>
+            <h1 className="bot-name">Chätbot</h1>
             <p className="bot-status">
               {status === 'ready' ? 'Online' : status === 'loading' ? 'Typing...' : 'Connecting...'}
             </p>
