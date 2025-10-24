@@ -1,5 +1,9 @@
 # thechat
 
+## setup
+
+- https://docs.deno.com/runtime/getting_started/setup_your_environment/
+
 ## getting started
 
 Start supabase:
@@ -11,5 +15,17 @@ npx supabase start
 Serve functions:
 
 ```shell
-npx supabase functions serve --no-verify-jwt
+npx supabase functions serve --no-verify-jwt --env-file .env.local
+```
+
+## deploy
+
+Deploy function:
+
+```shell
+supabase functions deploy --no-verify-jwt chat
+```
+
+```shell
+supabase secrets set --env-file .env.local
 ```

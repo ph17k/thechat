@@ -1,2 +1,6 @@
 #/bin/bash
 set -e
+
+if [ -n "$PUBLICAI_KEY" ]; then
+    echo "PUBLICAI_KEY=$PUBLICAI_KEY" > .env.local
+fi
