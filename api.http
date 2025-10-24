@@ -8,8 +8,14 @@ Content-Type: application/json
 {
     "messages": [
         {
+            "id": "1",
             "role": "user",
-            "content": "was geht ab?"
+            "parts": [
+                {
+                    "type": "text",
+                    "text": "was geht ab?"
+                }
+            ]
         }
     ]
 }
