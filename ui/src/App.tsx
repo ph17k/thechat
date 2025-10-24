@@ -52,8 +52,7 @@ export default function App() {
             <div className="welcome-message">
               <div className="welcome-content">
                 <div className="welcome-icon">👋</div>
-                <h2>Welcome to Chnurli Chat</h2>
-                <p>I'm here to help you with any questions you might have. What would you like to know?</p>
+                <h2>Was wotsch?!</h2>
               </div>
             </div>
           )}
@@ -88,7 +87,7 @@ export default function App() {
               value={input}
               onChange={e => setInput(e.target.value)}
               disabled={status !== 'ready'}
-              placeholder="Type your message here..."
+              placeholder="Da schriibe..."
               className="message-input"
               autoComplete="off"
             />
