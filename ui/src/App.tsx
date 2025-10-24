@@ -6,7 +6,7 @@ import './App.css'
 export default function App() {
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
-      api: 'https://redesigned-goldfish-wvjp566wpqjcvgww-54321.app.github.dev/functions/v1/chat',
+      api: 'https://cizruyfhatmvzdkkeggv.supabase.co/functions/v1/chat',
     }),
   })
   const [input, setInput] = useState('')
@@ -37,9 +37,9 @@ export default function App() {
             <div className="bot-icon">🤖</div>
           </div>
           <div className="bot-info">
-            <h1 className="bot-name">Chätbot</h1>
+            <h1 className="bot-name">Chät</h1>
             <p className="bot-status">
-              {status === 'ready' ? 'Online' : status === 'loading' ? 'Typing...' : 'Connecting...'}
+              {status === 'ready' ? 'Online' : status === 'streaming' ? 'Typing...' : 'Connecting...'}
             </p>
           </div>
         </div>
