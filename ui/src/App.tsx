@@ -14,7 +14,7 @@ export default function App() {
     <>
       {messages.map(message => (
         <div key={message.id}>
-          {message.role === 'user' ? 'User: ' : 'Chnurli: '}
+          {message.role === 'user' ? 'Du: ' : 'Chnurli: '}
           {message.parts.map((part, index) =>
             part.type === 'text' ? <span key={index}>{part.text}</span> : null,
           )}
@@ -37,7 +37,7 @@ export default function App() {
           placeholder="Säg öpis..."
         />
         <button type="submit" disabled={status !== 'ready'}>
-          Submit
+          Ab di post!
         </button>
       </form>
     </>
