@@ -5,7 +5,12 @@ POST {{baseUrl}}/functions/v1/chat
 Content-Type: application/json
 
 {
-    "query": "who are you?"
+    "messages": [
+        {
+            "role": "user",
+            "content": "was geht ab?"
+        }
+    ]
 }
 
 ### publicai

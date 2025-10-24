@@ -2,5 +2,5 @@
 set -e
 
 if [ -n "$PUBLICAI_KEY" ]; then
-    echo "PUBLICAI_KEY=$PUBLICAI_KEY" > .env.local
+    echo "PUBLICAI_KEY=$PUBLICAI_KEY" > .env
 fi

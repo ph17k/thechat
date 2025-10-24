@@ -15,7 +15,7 @@ npx supabase start
 Serve functions:
 
 ```shell
-npx supabase functions serve --no-verify-jwt --env-file .env.local
+npx supabase functions serve --no-verify-jwt --env-file .env
 ```
 
 ## deploy
@@ -27,7 +27,7 @@ supabase functions deploy --no-verify-jwt chat
 ```
 
 ```shell
-supabase secrets set --env-file .env.local
+supabase secrets set --env-file .env
 ```
 
 ## docs
