@@ -1,10 +1,10 @@
 # thechat
 
-## setup
+## getting started
+
+Setup env (deno):
 
 - https://docs.deno.com/runtime/getting_started/setup_your_environment/
-
-## getting started
 
 Start supabase:
 
@@ -29,3 +29,7 @@ supabase functions deploy --no-verify-jwt chat
 ```shell
 supabase secrets set --env-file .env.local
 ```
+
+## docs
+
+- https://platform.publicai.co/docs

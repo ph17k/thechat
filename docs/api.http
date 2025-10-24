@@ -5,5 +5,21 @@ POST {{baseUrl}}/functions/v1/chat
 Content-Type: application/json
 
 {
-    "name": "test"
+    "query": "who are you?"
+}
+
+### publicai
+POST https://api.publicai.co/v1/chat/completions
+Content-Type: application/json
+Authorization: Bearer {{$dotenv PUBLICAI_KEY}}
+User-Agent: thechat/1.0
+
+{
+    "messages": [
+        {
+            "role": "user",
+            "content": "who are you?"
+        }
+    ],
+    "model": "swiss-ai/apertus-8b-instruct"
 }
