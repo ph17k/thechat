@@ -1,0 +1,37 @@
+@baseUrl = http://127.0.0.1:54321
+#@baseUrl = https://cizruyfhatmvzdkkeggv.supabase.co
+
+### chat
+POST {{baseUrl}}/functions/v1/chat
+Content-Type: application/json
+
+{
+    "messages": [
+        {
+            "id": "1",
+            "role": "user",
+            "parts": [
+                {
+                    "type": "text",
+                    "text": "was geht ab?"
+                }
+            ]
+        }
+    ]
+}
+
+### publicai
+POST https://api.publicai.co/v1/chat/completions
+Content-Type: application/json
+Authorization: Bearer {{$dotenv PUBLICAI_KEY}}
+User-Agent: thechat/1.0
+
+{
+    "messages": [
+        {
+            "role": "user",
+            "content": "who are you?"
+        }
+    ],
+    "model": "swiss-ai/apertus-8b-instruct"
+}
