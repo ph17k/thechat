@@ -1,4 +1,13 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {}
+  "features": {},
+  "postCreateCommand": "./.devcontainer/init.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "humao.rest-client",
+        "denoland.vscode-deno"
+      ]
+    }
+  }
 }
