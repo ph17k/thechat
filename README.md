@@ -23,11 +23,11 @@ npx supabase functions serve --no-verify-jwt --env-file .env
 Deploy function:
 
 ```shell
-supabase functions deploy --no-verify-jwt chat
+npx supabase functions deploy --no-verify-jwt chat
 ```
 
 ```shell
-supabase secrets set --env-file .env
+npx supabase secrets set --env-file .env
 ```
 
 ## docs

@@ -1,4 +1,5 @@
 @baseUrl = http://127.0.0.1:54321
+@baseUrl = https://cizruyfhatmvzdkkeggv.supabase.co
 
 ### chat
 POST {{baseUrl}}/functions/v1/chat
